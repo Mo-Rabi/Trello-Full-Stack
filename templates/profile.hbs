@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile page</title>
+    <base href="/">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0079BF;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 1px;
+            margin: 1px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card img {
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            display: block;
+            flex-wrap: wrap;
+            flex-basis: 90%;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #55C3F2;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            border: none;
+            align-self: center;
+        }
+
+        .btn:hover {
+            background-color: #0079BF;
+        }
+
+        #changePassword{
+          background-color: orange;
+          width: 50px;
+          height: 50px;
+        }
+    </style>
+</head>
+<body>
+  <a href="/userSettings">
+     <img
+        src="https://www.svgrepo.com/show/345909/user-settings-fill.svg"
+        width="5%"
+        style="position:fixed; padding:2%;"
+      >
+  </a>
+ 
+
+<div class="container">
+      <a href="/"><img
+        src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Trello_logo.svg/1024px-Trello_logo.svg.png"
+        width="50%" style="margin:5% 25%;"
+        alt="logo"
+      /></a>
+      
+      <h1> Tasks </h1>
+
+    <form id="addTask" class="container">
+      <input type="text" id="title" placeholder="Task Title">
+      <input type="text" id="description" placeholder="Task Description">
+      <select id="status" name="status" required>
+        <option value="" disabled selected hidden>Status</option>
+        <option value="toDo">To Do</option>
+        <option value="inProgress">In Progress</option>
+        <option value="done">Done</option>
+      </select>
+      <input type="email" id="assignTo" placeholder="Assign To">
+      <input type="date" id="deadline">
+
+    </form>
+      <button class="btn" id="addTaskBtn" type="submit">Add task</button>
+      <button class="btn" id="getTasksAndUsersBtn" type="submit">Tasks&users</button>
+      <button class="btn" id="getTasksBtn" type="submit">Get All Tasks</button>
+
+      <div id="task-list">
+
+      </div>
+</div>
+
+
+
+
+
+
+<script>
+let titleInput = document.getElementById('title');
+let descriptionInput = document.getElementById('description');
+let statusInput = document.getElementById('status');
+let assignToInput = document.getElementById('assignTo');
+let deadlineInput = document.getElementById('deadline');
+
+  {{!--! Add a new task --}}
+  //const form = document.getElementById('addTask');
+const addTaskBtn = document.getElementById('addTaskBtn');
+addTaskBtn.addEventListener('click', async (event) => {
+    event.preventDefault();
+    let title = titleInput.value
+    let description = descriptionInput.value
+    let status = statusInput.value
+    let assignTo = assignToInput.value
+    let deadline = deadlineInput.value
+    
+    console.log(
+      `title:${title}, description:${description}, status:${status}, assign to:${assignTo} deadline:${deadline}`
+    );
+
+    const response = await fetch('/addTask', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({title, description,status, assignTo, deadline}),
+    });
+    if (response.ok) {
+      alert('Task was added successfully');
+
+    } else {
+      alert('An error occurred while adding the task');
+    }
+  });
+
+
+
+{{!--! Update a task --}}
+document.addEventListener('click', async (event) => {
+  if (event.target.matches('.edit-button')) {
+    const taskElement = event.target.closest('.task');
+    const taskId = taskElement.dataset.id;
+
+    const title = taskElement.querySelector('.title-input').value;
+    const description = taskElement.querySelector('.description-input').value;
+    const status = taskElement.querySelector('.status-input').value;
+    const assignTo = taskElement.querySelector('.assignTo-input').value;
+    const deadline = taskElement.querySelector('.deadline-input').value;
+
+
+    const response = await fetch(`/tasks/${taskId}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title, description, status, assignTo, deadline }),
+    });
+
+    if (response.ok) {
+      alert('Task was updated successfully');
+    } else {
+      alert('An error occurred while updating the task');
+    }
+  }
+});
+
+{{!--! Get all tasks created by that user --}}
+
+const getAllTasksBtn = document.getElementById('getTasksBtn');
+getAllTasksBtn.addEventListener("click", async (event) => {
+  event.preventDefault();
+  const taskList = document.getElementById('task-list');
+  taskList.innerHTML=''
+
+  const response = await fetch('/tasks', {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      });
+
+  if (response.ok) {
+    {{!--? Fetching tasks send by the server --}}
+    fetch('/tasks')
+      .then(response => response.json())
+      .then(tasks => {
+    const taskList = document.getElementById('task-list');
+    
+
+    tasks.forEach(task => {
+      const taskElement = document.createElement('div');
+      taskElement.className = 'task';
+      taskElement.dataset.id = task._id;
+
+      const titleInput = document.createElement('input');
+      titleInput.className = 'title-input';
+      titleInput.value = task.title;
+      titleInput.placeholder = 'Title';
+      titleInput.required = true;
+
+      const descriptionInput = document.createElement('input');
+      descriptionInput.className = 'description-input';
+      descriptionInput.value = task.description;
+      descriptionInput.placeholder = 'Description';
+      descriptionInput.required = true;
+
+      const statusInput = document.createElement('input');
+      statusInput.className = 'status-input';
+      statusInput.value = task.status;
+      statusInput.placeholder = 'Status';
+      statusInput.required = true;
+
+      const assignToInput = document.createElement('input');
+      assignToInput.className = 'assignTo-input';
+      assignToInput.value = task.assignTo;
+      assignToInput.placeholder = 'Assign to';
+      assignToInput.required = true;
+
+      const deadlineInput = document.createElement('input');
+      deadlineInput.className = 'deadline-input';
+    
+      deadlineInput.value = task.deadline;
+      deadlineInput.placeholder = 'Deadline';
+      deadlineInput.required = true;
+
+
+      const editButton = document.createElement('button');
+      editButton.className = 'edit-button';
+      editButton.textContent = 'Edit';
+
+      const deleteButton = document.createElement('button');
+      deleteButton.className = 'delete-button';
+      deleteButton.textContent = 'Delete';
+
+      taskElement.appendChild(titleInput);
+      taskElement.appendChild(descriptionInput);
+      taskElement.appendChild(statusInput);
+      taskElement.appendChild(assignToInput);
+      taskElement.appendChild(deadlineInput);
+      taskElement.appendChild(editButton);
+      taskElement.appendChild(deleteButton);
+
+      taskList.appendChild(taskElement);
+    });
+  });
+      } else {
+        alert('An error occurred while retrieving your tasks');
+      }
+
+})
+
+{{!--! tasks With Author details --}}
+const getTasksAndUsersBtn = document.getElementById("getTasksAndUsersBtn")
+getTasksAndUsersBtn.addEventListener('click', async(req,res)=>{
+const response = await fetch('/tasksWithAuthor', {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      alert('Tasks and user details were retrieved successfully');
+      window.location.href = "/tasksWithAuthor";
+    } else {
+      alert('An error occurred while updating the task');
+    }
+})
+
+{{!--! Delete a task --}}
+document.addEventListener('click', async (event) => {
+    if (event.target.matches('.delete-button')) {
+  event.preventDefault();
+  const taskElement = event.target.closest('.task');
+  const taskId = taskElement.dataset.id;
+  console.log(taskId);
+
+  const response = await fetch(`/delete/${taskId}`, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      alert('Task was deleted successfully');
+    } else {
+      alert('An error occurred while deleting the task');
+    }
+  }
+})
+
+
+
+</script>
+</body>
+</html>
