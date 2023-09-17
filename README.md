@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://logos-world.net/wp-content/uploads/2021/03/Trello-Logo.png" alt="Your App Logo" width="200" height="200">
+  <img src="https://logos-world.net/wp-content/uploads/2021/03/Trello-Logo.png" alt="Your App Logo" width="300" height="200">
 </p>
 
 # Trello Clone Full-Stack App
