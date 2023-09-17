@@ -5,10 +5,12 @@
 # Trello Clone Full-Stack App
 
 Welcome to our modern Trello clone full-stack app, built with MongoDB, Node.js, Express, Bootstrap, JWT authentication, cookies, and a host of other powerful packages. This project combines functionality, security, and style to provide you with a feature-rich task management experience.
+![image](https://github.com/Mo-Rabi/Trello/assets/69902912/b09ca2fd-aff7-4296-83b3-269f16fd73bd)
 
 ![image](https://github.com/Mo-Rabi/Trello/assets/69902912/b4a63531-f554-4dab-a3ae-aadec7c6816e)
 
-![image](https://github.com/Mo-Rabi/Trello/assets/69902912/b09ca2fd-aff7-4296-83b3-269f16fd73bd)
+![image](https://github.com/Mo-Rabi/Trello/assets/69902912/7d3bc8b7-105d-49b9-bdbb-037e89fbbc1d)
+
 
 
 ## Features
