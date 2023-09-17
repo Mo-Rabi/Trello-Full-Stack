@@ -7,13 +7,14 @@
 Welcome to our modern Trello clone full-stack app, built with MongoDB, Node.js, Express, Bootstrap, JWT authentication, cookies, and a host of other powerful packages. This project combines functionality, security, and style to provide you with a feature-rich task management experience.
 
 
-![image](https://github.com/Mo-Rabi/Trello/assets/69902912/b09ca2fd-aff7-4296-83b3-269f16fd73bd)
-
-![image](https://github.com/Mo-Rabi/Trello-Full-Stack/assets/69902912/c355ad2c-2c0f-4151-b680-0750e872e64d)
-
-![image](https://github.com/Mo-Rabi/Trello/assets/69902912/7d3bc8b7-105d-49b9-bdbb-037e89fbbc1d)
-
-![image](https://github.com/Mo-Rabi/Trello-Full-Stack/assets/69902912/10a88e19-3077-4302-ac2b-e0cad24fe15c)
+![1](https://github.com/Mo-Rabi/Trello-Full-Stack/assets/69902912/57ec0627-a835-463c-9238-eb7fcab82a30)
+![2](https://github.com/Mo-Rabi/Trello-Full-Stack/assets/69902912/31063c5a-5ad1-497b-a6c9-bd34e10e6e02)
+![3](https://github.com/Mo-Rabi/Trello-Full-Stack/assets/69902912/37461444-3f72-4733-a84d-70c5c048b894)
+![4](https://github.com/Mo-Rabi/Trello-Full-Stack/assets/69902912/f424f3a3-7398-4a6a-bb88-378fc95033dd)
+![5](https://github.com/Mo-Rabi/Trello-Full-Stack/assets/69902912/50fa7805-31bc-4f47-b6ec-1deadfe1b2d0)
+![6](https://github.com/Mo-Rabi/Trello-Full-Stack/assets/69902912/a785659e-346d-4f24-a24c-06da01a66d3d)
+![7](https://github.com/Mo-Rabi/Trello-Full-Stack/assets/69902912/aaaec389-b7ce-4dee-be0c-5ae7456ba659)
+![8](https://github.com/Mo-Rabi/Trello-Full-Stack/assets/69902912/63a8cc7d-5324-4e89-bbfe-5d6b05b514a1)
 
 
 
