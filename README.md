@@ -8,6 +8,9 @@ Welcome to our modern Trello clone full-stack app, built with MongoDB, Node.js, 
 
 ![image](https://github.com/Mo-Rabi/Trello/assets/69902912/b4a63531-f554-4dab-a3ae-aadec7c6816e)
 
+![image](https://github.com/Mo-Rabi/Trello/assets/69902912/b09ca2fd-aff7-4296-83b3-269f16fd73bd)
+
+
 ## Features
 
 - **Secure Authentication**: User-friendly signup and signin processes with email verification.
