@@ -1,10 +1,12 @@
 <p align="center">
-  <img src="your-app-logo.png" alt="Your App Logo" width="200" height="200">
+  <img src="https://logos-world.net/wp-content/uploads/2021/03/Trello-Logo.png" alt="Your App Logo" width="200" height="200">
 </p>
 
 # Trello Clone Full-Stack App
 
 Welcome to our modern Trello clone full-stack app, built with MongoDB, Node.js, Express, Bootstrap, JWT authentication, cookies, and a host of other powerful packages. This project combines functionality, security, and style to provide you with a feature-rich task management experience.
+
+
 ![image](https://github.com/Mo-Rabi/Trello/assets/69902912/b09ca2fd-aff7-4296-83b3-269f16fd73bd)
 
 ![image](https://github.com/Mo-Rabi/Trello/assets/69902912/b4a63531-f554-4dab-a3ae-aadec7c6816e)
