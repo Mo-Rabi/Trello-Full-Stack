@@ -38,6 +38,16 @@ Welcome to our modern Trello clone full-stack app, built with MongoDB, Node.js, 
 - **Image Handling**: Cropping and uploading avatars, Multer
 - **Validation**: Frontend, backend, and database validation
 
+## To do
+
+- **Refactor**: Node.js, Express.js, MongoDB
+- **Cropping code**: make it more concise
+- **assign to**: search a user by email and display their name and avatar in a dropdown from the search input field
+- **permission profiles**: add permission profiles (admin, editor, viewer)
+- **Photo upload**: handle uploading large photos to database (app.use(compressor(), increase payload limit)
+- **Design**: Refine the front end design
+
+  
 ## Installation
 
 1. Clone the repository:
