@@ -47,7 +47,7 @@ Welcome to our modern Trello clone full-stack app, built with MongoDB, Node.js, 
 4. npm start
 
 
-##Usage
+## Usage
 
 - **Register for an account.**:
 - **Verify your email to activate your account.**
