@@ -46,6 +46,7 @@ Welcome to our modern Trello clone full-stack app, built with MongoDB, Node.js, 
 - **permission profiles**: add permission profiles (admin, editor, viewer)
 - **Photo upload**: handle uploading large photos to database (app.use(compressor(), increase payload limit)
 - **Design**: Refine the front end design
+- **Filter**: apply filters on tasks and users (aggregation framework)
 
   
 ## Installation
