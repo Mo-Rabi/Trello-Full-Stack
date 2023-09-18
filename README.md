@@ -48,6 +48,7 @@ Welcome to our modern Trello clone full-stack app, built with MongoDB, Node.js, 
 - **Photo upload**: handle uploading large photos to database (app.use(compressor(), increase payload limit)
 - **Design**: Refine the front end design
 - **Filter**: apply filters on tasks and users (aggregation framework)
+- **Handle incorrect paths**: design a page not found hbs template page that shows when the path is not valid
 
   
 ## Installation
