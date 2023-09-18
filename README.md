@@ -41,7 +41,7 @@ Welcome to our modern Trello clone full-stack app, built with MongoDB, Node.js, 
 
 ## To do
 
-- **Refactor**: Node.js, Express.js, MongoDB
+- **Refactor**: check performance and improve it
 - **Cropping code**: make it more concise
 - **assign to**: search a user by email and display their name and avatar in a dropdown from the search input field
 - **permission profiles**: add permission profiles (admin, editor, viewer)
