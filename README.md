@@ -9,7 +9,8 @@ Welcome to our modern Trello clone full-stack app, built with MongoDB, Node.js, 
 
 ![1](https://github.com/Mo-Rabi/Trello-Full-Stack/assets/69902912/57ec0627-a835-463c-9238-eb7fcab82a30)
 
-[<img src="https://i.ytimg.com/vi/Hc79sDi3f0U/maxresdefault.jpg" width="50%">](https://www.youtube.com/watch?v=3nLdANtAy4Q&ab)
+[<img src="![Thumbnail](https://github.com/Mo-Rabi/Trello-Full-Stack/assets/69902912/28767732-ae87-4f09-ac24-8105b79b4908)
+">](https://www.youtube.com/watch?v=3nLdANtAy4Q&ab)
 
 ![2](https://github.com/Mo-Rabi/Trello-Full-Stack/assets/69902912/31063c5a-5ad1-497b-a6c9-bd34e10e6e02)
 ![3](https://github.com/Mo-Rabi/Trello-Full-Stack/assets/69902912/37461444-3f72-4733-a84d-70c5c048b894)
